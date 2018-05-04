@@ -1,12 +1,10 @@
 import random
 
 
-def play():
+def play(player_name):
     guessesTaken = 0
-    print('Hello! What is your name?')
-    myName = input()
     number = random.randint(1, 100)
-    print('Well, ' + myName + ', I am thinking of a number between 1 and 100.')
+    print('Well, ' + player_name + ', I am thinking of a number between 1 and 100.')
     while guessesTaken < 30:
         print('Take a guess.')
         guess = input()
@@ -25,7 +23,7 @@ def play():
             break
     if guess == number:
         guessesTaken = str(guessesTaken)
-        print('Good job, ' + myName + '! You guessed my number in ' + guessesTaken + ' guesses!')
+        print('Good job, ' + player_name + '! You guessed my number in ' + guessesTaken + ' guesses!')
     else:
         number = str(number)
         print('Nope. The number I was thinking of was ' + number)

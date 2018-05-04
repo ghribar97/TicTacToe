@@ -125,7 +125,7 @@ class GuessingGame(ListItem):
 
     def start_game(self):
         super().start_game()
-        guessingGame.play()
+        guessingGame.play(self.parent.parent.get_player_name())
 
 
 class TicTacToeSinglePlayer(ListItem):

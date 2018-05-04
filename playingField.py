@@ -7,37 +7,38 @@ class PlayingField:
     """
     This class is carrying all the data about the field.
     """
-    def __init__(self, parent):
-        self.parent = parent
+    def __init__(self):
         self.field_cells = {}
         self.initialize_field(variables.DEFAULT_FIELD_SIZE)
 
     def get_empty_cells(self):
         cells = []
-        for cell in self.field_cells.values():
-            if cell.status == variables.CellStatus.Empty:
-                cells.append(cell)
+        for one_cell in self.field_cells.values():
+            if one_cell.status == variables.CellStatus.Empty:
+                cells.append(one_cell)
         return cells
 
     def get_number_of_cells(self):
         return len(self.field_cells)
 
-    def get_cell_by_id(self, id):
-        if functions.is_number(id):
-            return self.field_cells[id]
+    def get_cell_by_id(self, id_cell):
+        if functions.is_number(id_cell) and id_cell in self.field_cells:
+            return self.field_cells[id_cell]
         return None
 
     def get_cell_by_x_y(self, x, y):
-        for cell in self.field_cells.values():
-            if cell.x == x and cell.y == y:
-                return cell
-        return None
+        if functions.are_numbers([x, y]):
+            for cell in self.field_cells.values():
+                if cell.x == x and cell.y == y:
+                    return cell
+            return None
 
     def get_clicked_cell(self, x, y):
-        for one_cell in self.field_cells.values():
-            if one_cell.is_click_inside(x, y):
-                return one_cell
-        return None
+        if functions.are_numbers([x, y]):
+            for one_cell in self.field_cells.values():
+                if one_cell.is_click_inside(x, y):
+                    return one_cell
+            return None
 
     @staticmethod
     def _correct_input(x):

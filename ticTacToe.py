@@ -30,7 +30,7 @@ class TicTacToe:
 
 class Board:
     def __init__(self, name1, name2):
-        self.playing_field = playingField.PlayingField(self)
+        self.playing_field = playingField.PlayingField()
         self.gui = gui.Board(self)
         self.gui.bottom_frame.set_player_names(name1, name2)
         self.multi_player = None

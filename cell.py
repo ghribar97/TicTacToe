@@ -22,10 +22,12 @@ class Cell:
             self.status = None
 
     def is_click_inside(self, x, y):
-        return self.x1 <= x <= self.x2 and self.y1 <= y <= self.y2
+        if functions.are_numbers([x, y]):
+            return self.x1 <= x <= self.x2 and self.y1 <= y <= self.y2
 
     def change_cell_type(self, new_cell_type):
         self.status = new_cell_type
+        return self.status
 
 
 class CrossCell(Cell):

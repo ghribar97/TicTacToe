@@ -1,7 +1,6 @@
 import Common.variables as variables
 import Common.functions as functions
 from Graphics.drawer import ShapeDrawer
-#from menu import Menu
 import tkinter
 
 

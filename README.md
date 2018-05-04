@@ -17,3 +17,7 @@ Multi player, works on localhost.
 Single player
 - 
 The bot will play randomly, there is no AI (for now).
+
+Tests
+-
+For running the tests, run file `Tests/mainTester.py` or every file in the `Tests` folder individually.

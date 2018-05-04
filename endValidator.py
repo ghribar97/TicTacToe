@@ -55,7 +55,14 @@ class EndValidator:
 
     @staticmethod
     def _win(cells, columns):
-        return len(cells) == columns
+        if isinstance(cells, list) and functions.is_number(columns):
+            if len(cells) > 0:
+                first_one = cells[0]
+                for one_cell in cells:
+                    if one_cell.status != first_one.status or one_cell.status == CellStatus.Empty:
+                        return False
+            return len(cells) == columns
+        raise ValueError(str(cells) + " is not a list!")
 
     @staticmethod
     def check_for_the_end(playing_field, cell):

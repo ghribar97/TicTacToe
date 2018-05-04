@@ -27,6 +27,8 @@ def are_numbers(val):
     :param val: list of primitive types
     :return:
     """
+    if not isinstance(val, list):
+        raise ValueError(str(val) + " is not a list!")
     for value in val:
         if not is_number(value):
             return False
@@ -35,6 +37,9 @@ def are_numbers(val):
 
 def remove_key(dictionary, key):
     if isinstance(dictionary, dict):
+        if key not in dictionary:
+            raise ValueError(str(dictionary) + " is not containing the key: " + str(key))
         new = dict(dictionary)
         del new[key]
         return new
+    raise ValueError(str(dictionary) + " is not a dictionary!")
