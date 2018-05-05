@@ -1,5 +1,14 @@
-  language: python
-  python:
-    - "3.6"
-  script:
-    - pytest
+language: python
+python:
+  - "3.5"
+  - "3.6"
+
+# command to install dependencies
+install:  
+  - pip install python-coveralls
+
+script:
+  - coverage run Tests/mainTester.py
+
+after_success:
+  - coveralls
