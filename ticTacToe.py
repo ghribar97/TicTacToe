@@ -57,7 +57,3 @@ class Board:
     @staticmethod
     def handle_wrong_input():
         messenger.SendToUser.error("Wrong input! Number should be a number between 3 and 5")
-
-
-if __name__ == "__main__":
-    TicTacToe.play_single_player("lolek")

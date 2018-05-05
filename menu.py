@@ -48,7 +48,7 @@ class Menu(tkinter.Tk):
             print("Choose the game first!")
 
     def _configure_top_frame(self):
-        tkinter.Label(self.top_frame, text="CHOOSE GAME", font=("Helvetica", 35)).grid(row=0, padx=70)
+        tkinter.Label(self.top_frame, text="CHOOSE GAME", font=("Helvetica", 35), fg="green").grid(row=0, padx=70)
         tkinter.Label(self.top_frame, text="Enter your name:", font=("Helvetica", 15)).grid(row=1)
         tkinter.Entry(self.top_frame, text=self.player_name, justify="center", width=50).grid(row=2)
 

@@ -2,6 +2,7 @@ import Common.variables as variables
 import Common.functions as functions
 from Graphics.drawer import ShapeDrawer
 import tkinter
+import menu
 
 
 class Board(tkinter.Tk):
@@ -107,7 +108,7 @@ class BottomFrame(Frame):
 
     def go_back(self):
         self.parent.destroy()
-        #Menu()
+        menu.Menu()
 
     def _add_elements(self):
         temp = variables.SHAPE_LINE_WIDTH
