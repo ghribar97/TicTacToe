@@ -1,6 +1,7 @@
 TicTacToe
 =
 [![Coverage Status](https://coveralls.io/repos/github/ghribar97/TicTacToe/badge.svg?branch=master)](https://coveralls.io/github/ghribar97/TicTacToe?branch=master)
+
 This is my and masopust's implementation of the game [Tic-Tac-Toe](https://en.wikipedia.org/wiki/Tic-tac-toe).
 
 Installation
